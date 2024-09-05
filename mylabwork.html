@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)file:///C:/Users/User/Downloads/Telegram%20Desktop/index%20(1).html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Вычисление синуса заданного угла</title>
+    
+    <meta name="keywords" content="Синус, геометрия, математика, триганометрия, тангенс, котангенс, косинус, катеты, гипотенуза, треугольник">
+    <meta name="description" content="Этот сайт нужен для вычисления синуса заданного угла">
+<style>
+        body {background-color: cyan;}
+        #funnyMessage {
+            display: none;
+        }
+    </style></head>
+    
+<body>
+    <div class="MainPart">
+        <h1 style="text-align: center;">Welcome!</h1>
+        <div style="display: flex; justify-content: space-between;">
+            
+            <div style="margin-left: 35%;">
+            <label for="katet1">Введите число: </label>
+            <input type="number" id="number">
+            </div>
+           
+            <div style="margin-right: 35%;">
+            <label for="gipotenuza">Введите степень: </label>
+            <input type="number" id="stepan">
+            </div>
+
+        </div>
+        <div>
+        <button onclick="showResult()" style="margin-left: 48%; margin-top: 1%;">Посчитать</button>
+        </div>
+        
+        <div id="funnyMessage">
+            <img src="file:///C:/Users/User/Downloads/Telegram%20Desktop/image/happyPicture.png" alt="весёлая картинка" width="300">
+        </div>
+        
+        <div>
+        <textarea id="output" rows="5" cols="30" readonly="" style="margin-left: 43%; margin-top: 2%;"></textarea>
+        </div>
+    </div>
+
+
+<script>
+
+    function showResult() {
+        const movement = document.querySelector('.myElement')
+        const number = parseFloat(document.getElementById("number").value);
+        const stepan = parseFloat(document.getElementById("stepan").value);
+        const result = Math.pow(number,stepan);
+
+        const answerIs = `Результат: = ${result}`;
+
+        document.getElementById("output").value = answerIs;
+
+
+       
+
+    }
+    let timeout;
+
+    function showFunnyMessage() {
+        document.getElementById("funnyMessage").style.display = "block";
+    }
+
+    function startTimer() {
+        timeout = setTimeout(showFunnyMessage, 60000); // Через 1 минуту (60000 мс)
+    }
+
+    function resetTimer() {
+        clearTimeout(timeout);
+        startTimer(); // Перезапуск таймера
+    }
+
+    document.addEventListener("mousemove", resetTimer);
+    document.addEventListener("keypress", resetTimer);
+
+    startTimer();
+</script>
+
+</body></html>
